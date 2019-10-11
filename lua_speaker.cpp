@@ -21,7 +21,7 @@ const Luna<LuaSpeaker>::FunctionType LuaSpeaker::methods[] = {
 };
 
 
-LuaSpeaker::LuaSpeaker(lua_State *L) {
+LuaSpeaker::LuaSpeaker(lua_State *L){
     real_object = (Speaker*)lua_touserdata(L, 1);
 }
 
@@ -31,6 +31,7 @@ LuaSpeaker::~LuaSpeaker() {
 
 
 int LuaSpeaker::Speak(lua_State *L) {
-    this->real_object->Speak(lua_tostring(L, 1));
+    auto m = lua_tostring(L, -1);
+    this->real_object->Speak(m);
     return 0;
 }

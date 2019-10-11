@@ -23,6 +23,7 @@ public:
     static const char className[];
     static const Luna<LuaSpeaker>::PropertyType properties[];
     static const Luna<LuaSpeaker>::FunctionType methods[];
+
 private:
     // The pointer to the 'real object' defined in object.cc
     Speaker* real_object;
