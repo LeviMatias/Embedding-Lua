@@ -1,3 +1,6 @@
+#ifndef LUNA_H
+#define LUNA_H
+
 #include "lua.hpp"
 #include <string.h> // For strlen
 
@@ -16,6 +19,10 @@ public:
         int             (T::*func) (lua_State *);
     };
 
+    struct RegType {
+        const char* name;
+        const int(T::*mfunc)(lua_State*);
+    };
 /*
   @ check
   Arguments:
@@ -286,3 +293,5 @@ public:
         return 1;
     }
 };
+
+#endif
