@@ -5,6 +5,9 @@ The example works by making use of the proxy pattern:
 We declare and define a Speaker.cpp class and encapsulate it in a LuaSpeaker.cpp that holds a pointer to the main object.
 LuaSpeaker.cpp exposes the functionality of Speaker.cpp to Lua and redirects all method calls to the real object.
 
+to understand the code I recommend looking at it in the following order:
+Speaker -> LuaSpeaker -> main
+
 Sources:
 - http://lua-users.org/wiki/LunaFive
 - http://lua-users.org/wiki/CppObjectBinding
