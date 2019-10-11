@@ -4,6 +4,7 @@
 #include "lua.hpp"
 #include "luna.h"
 #include "speaker.h"
+#include "lua_speaker.h"
 
 int main()
 {

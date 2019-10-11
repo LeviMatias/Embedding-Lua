@@ -19,10 +19,6 @@ public:
         int             (T::*func) (lua_State *);
     };
 
-    struct RegType {
-        const char* name;
-        const int(T::*mfunc)(lua_State*);
-    };
 /*
   @ check
   Arguments:

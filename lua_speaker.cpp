@@ -4,6 +4,23 @@
 
 #include "lua_speaker.h"
 
+#define method(class, name) {#name, &class::name}
+
+//Name to use to address the class in Lua
+const char LuaSpeaker::className[] = "LuaSpeaker";
+
+//List of class properties that one can set/get from Lua
+const Luna<LuaSpeaker>::PropertyType LuaSpeaker::properties[] = {
+        {0,0}
+};
+
+//List of class methods to make available in Lua
+const Luna<LuaSpeaker>::FunctionType LuaSpeaker::methods[] = {
+        method(LuaSpeaker, Speak),
+        {0,0}
+};
+
+
 LuaSpeaker::LuaSpeaker(lua_State *L) {
     real_object = (Speaker*)lua_touserdata(L, 1);
 }
@@ -12,10 +29,8 @@ LuaSpeaker::~LuaSpeaker() {
     printf("deleted Lua Object (%p)\n", this);
 }
 
-void LuaSpeaker::setObject(lua_State *L) {
-    real_object = (Speaker*)lua_touserdata(L, 1);
-}
 
-void LuaSpeaker::Speak(lua_State *L) {
+int LuaSpeaker::Speak(lua_State *L) {
     this->real_object->Speak(lua_tostring(L, 1));
+    return 0;
 }
