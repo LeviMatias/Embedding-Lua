@@ -6,6 +6,7 @@ We declare and define a Speaker.cpp class and encapsulate it in a LuaSpeaker.cpp
 LuaSpeaker.cpp exposes the functionality of Speaker.cpp to Lua and redirects all method calls to the real object.
 
 to understand the code I recommend looking at it in the following order:
+
 Speaker -> LuaSpeaker -> main
 
 Sources:
