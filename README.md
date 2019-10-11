@@ -7,7 +7,7 @@ LuaSpeaker.cpp exposes the functionality of Speaker.cpp to Lua and redirects all
 
 to understand the code I recommend looking at it in the following order:
 
-Speaker -> LuaSpeaker -> main
+Speaker -> LuaSpeaker -> main -> speakers.lua
 
 Sources:
 - http://lua-users.org/wiki/LunaFive
